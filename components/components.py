@@ -3,14 +3,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement as SeleniumWebElement
 
 class WebElement:
-    def __init__(self, driver, locator = ''):
+    def __init__(self, driver, locator = '', by=By.CSS_SELECTOR):
         self.driver = driver
         self.locator = locator
+        self.by = by
 
-    def click(self):
+    def click(self): #клик по чему либо
         self.find_element().click()
 
-    def find_element(self) -> SeleniumWebElement:
+    def find_element(self) -> SeleniumWebElement: #найти элемент
         return self.driver.find_element(By.CSS_SELECTOR, self.locator)
 
     def exist(self):
@@ -19,3 +20,6 @@ class WebElement:
         except NoSuchElementException:
             return False
         return True
+
+    def get_text(self):
+        return str(self.find_element().text)
