@@ -12,7 +12,7 @@ class WebElement:
         self.find_element().click()
 
     def find_element(self) -> SeleniumWebElement: #найти элемент
-        return self.driver.find_element(By.CSS_SELECTOR, self.locator)
+        return self.driver.find_element(self.by, self.locator)
 
     def exist(self):
         try:
