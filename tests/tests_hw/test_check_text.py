@@ -24,7 +24,10 @@ def test_check_elements_page_text(browser):
 
     assert actual_center_text == expected_center_text
 
-# def test_page_elements(browser):
-#     el_page = ElementsPage(browser)
-#
-#     el_page.visit()
+def test_page_elements(browser):
+    el_page = ElementsPage(browser)
+    el_page.visit()
+    assert el_page.text_elements.get_text() == "Please select an item from left to start practice."
+    assert el_page.icon.exist()
+    assert el_page.button_sidebar_first.exist()
+    assert el_page.button_sidebar_first_textbox.exist()
