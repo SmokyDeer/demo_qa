@@ -8,5 +8,5 @@ class ElementsPage(BasePage):
         self.base_url = "https://demoqa.com/elements"
         super().__init__(driver, self.base_url)
 
-        self.please_select_text = WebElement(driver,"//div[contains(text(), 'Please select an item from left to start practice.')]",  by=By.XPATH)
+        self.please_select_text = WebElement(driver,"#app > div > div > div.row > div.col-12.mt-4.col-md-6")
 

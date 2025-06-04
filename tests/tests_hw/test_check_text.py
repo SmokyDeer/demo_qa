@@ -17,9 +17,14 @@ def test_check_elements_page_text(browser):
     element_page = ElementsPage(browser)
 
     demo_qa_page.visit()
-    assert demo_qa_page.equal_url()
+    demo_qa_page.button_elenents.click()
 
     actual_center_text = element_page.please_select_text.get_text()
     expected_center_text = 'Please select an item from left to start practice.'
 
     assert actual_center_text == expected_center_text
+
+# def test_page_elements(browser):
+#     el_page = ElementsPage(browser)
+#
+#     el_page.visit()
